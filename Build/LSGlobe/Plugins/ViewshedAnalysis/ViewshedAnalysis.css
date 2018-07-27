@@ -1,0 +1,415 @@
+/*
+主容器
+ */
+.LSGlobe-LSGlobeViewshed {
+    border-radius: 5px;
+    transition: width ease-in-out 0.25s;
+    background: rgba(48, 51, 54, 0.8);
+    border: 1px solid #444;
+    color: #edffff;
+    display: inline-block;
+    position: relative;
+    padding: 4px 12px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* 可视域分析插件*/
+.LSGlobe-LSGlobeViewshedContainer {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+
+/*可视域button*/
+.LSGlobe-LSGlobeViewshed-button {
+    text-align: center;
+    font-size: 11pt;
+}
+
+/*下拉框显示*/
+.LSGlobe-LSGlobeViewshed-visible {
+    width: 185px;
+    height: auto;
+}
+
+/*下拉隐藏*/
+.LSGlobe-LSGlobeViewshed-hidden {
+    width: 75px;
+    height: 17px !important;
+    overflow: hidden;
+}
+
+.LSGlobe-LSGlobeViewshed-visible .LSGlobe-LSGlobeViewshed-button {
+    /*border-bottom: 1px solid #aaa;*/
+    padding-bottom: 3px;
+}
+
+.LSGlobe-LSGlobeViewshed input:enabled, .LSGlobe-LSGlobeViewshed-button {
+    cursor: pointer;
+}
+
+/*内容显示域*/
+.LSGlobe-LSGlobeViewshed-dropDown {
+    margin: 5px 0;
+    font-family: sans-serif;
+    font-size: 10pt;
+    width: 185px;
+}
+
+/*选择button*/
+.LSGlobe-LSGlobeViewshed-pickButton {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+    color: #edffff;
+    border-radius: 5px;
+    padding: 3px 7px;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.LSGlobe-LSGlobeViewshed-pickButton:focus {
+    outline: none;
+}
+
+.LSGlobe-LSGlobeViewshed-pickButton:hover {
+    color: #000; /* For text buttons */
+    background: #adf;
+    border-color: #fff;
+    box-shadow: 0 0 8px #fff;
+}
+
+.LSGlobe-LSGlobeViewshed-pickButton:active, .LSGlobe-LSGlobeViewshed-pickButtonHighlight {
+    color: #000; /* For text buttons */
+    background: #adf;
+    border-color: #fff;
+    box-shadow: 0 0 8px #fff;
+}
+
+/*居中*/
+.LSGlobe-LSGlobeViewshed-center {
+    text-align: center;
+}
+
+/*可视域折叠*/
+.LSGlobe-LSGlobeViewshed-Analysis {
+    font-weight: bold;
+    /*border-bottom: 1px solid #aaa;!*下划线*!*/
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+/*折叠号 “+” “-”*/
+.LSGlobe-LSGlobeViewshed-toggleSwitch {
+    padding: 3px;
+    cursor: pointer;
+}
+/*各分割小部分*/
+.LSGlobe-LSGlobeViewshed-section input[type=search]{
+    text-align: left;
+    background-color: #222;
+    outline: none;
+    border: 1px solid #444;
+    color: #edffff;
+    width: 142px;
+    border-radius: 3px;
+    padding: 1px;
+    margin-left: 10px;
+    cursor: auto;
+}
+
+.LSGlobe-LSGlobeViewshed-section input[type=number] .LSGlobe-LSGlobeViewshed-section input[type=range]{
+    float : left;
+}
+
+.LSGlobe-LSGlobeViewshed-section input[type=number]::-webkit-outer-spin-button,
+.LSGlobe-LSGlobeViewshed-section input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.LSGlobe-LSGlobeViewshed-section input[type=range] {
+    margin-left: 5px;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    background: #ddd;
+    height: 3px;
+}
+
+
+.LSGlobe-LSGlobeViewshed-section {
+    /*margin-bottom: 10px;*/
+    transition: max-height 0.25s;
+}
+
+.LSGlobe-LSGlobeViewshed-section input[type=number]{
+    text-align: left;
+    background-color: #222;
+    outline: none;
+    border: 1px solid #444;
+    color: #edffff;
+    width: 35px;
+    border-radius: 3px;
+    padding: 1px;
+    margin-left: 10px;
+    cursor: auto;
+}
+
+.LSGlobe-LSGlobeViewshed-section input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.LSGlobe-LSGlobeViewshed-section input[type=range]::-moz-range-thumb {
+    border: 1px solid #000000;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.LSGlobe-LSGlobeViewshed-section input[type=range]::-moz-range-thumb {
+    border: 1px solid #000000;
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+/*显示折叠区域*/
+.LSGlobe-LSGlobeViewshed-show {
+    max-height: 500px;
+}
+
+/*隐藏着折叠区域*/
+.LSGlobe-LSGlobeViewshed-hide {
+    max-height: 0;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+/*
+树形表
+ */
+.LSGlobe-LSGlobeViewshed-tree {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 3px;
+    margin-bottom: 5px;
+    overflow: auto;
+    overflow-x: hidden;
+    height : 120px;
+    width: auto;
+}
+
+.LSGlobe-LSGlobeViewshed-tree input[type=text]{
+    width: 100%;
+    margin-left: -13px;
+}
+
+.LSGlobe-LSGlobeViewshed-Ul{
+    margin: 0px;
+}
+
+.LSGlobe-LSGlobeViewshed-LI{
+    margin : 5px;
+    list-style-type: none;
+    margin-left: -40px;
+    margin-bottom: 2px;
+    width:180px;
+    height:20px;
+    text-align: left;
+    padding-left: 10px;
+
+}
+.LSGlobe-LSGlobeViewshed-LI:active{
+    /*color: #000; !* For text buttons *!*/
+    /*background: #adf;*/
+    /*border-color: #fff;*/
+    /*box-shadow: 0 0 8px #fff;*/
+}
+
+.LSGlobe-LSGlobeViewshed-LI:hover{
+    background-color: #0e90d2;
+}
+
+/*可视域编辑折叠*/
+.LSGlobe-LSGlobeViewshed-sectionHeader {
+    font-weight: bold;
+    border-bottom: 1px solid #aaa;/*下划线*/
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+/*跳转到视角button*/
+.LSGlobe-LSGlobeViewshed-jumpButton {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+    color: #edffff;
+    border-radius: 5px;
+    padding: 3px 7px;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0 auto;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.LSGlobe-LSGlobeViewshed-jumpButton enable:focus {
+    outline: none;
+}
+
+.LSGlobe-LSGlobeViewshed-jumpButton enable:active .LSGlobe-LSGlobeViewshed-jumpButtonHighlight{
+    color: #000; /* For text buttons */
+    background: #adf;
+    border-color: #fff;
+    box-shadow: 0 0 8px #fff;
+}
+
+.LSGlobe-LSGlobeViewshed-jumpButton:hover{
+    color: #000; /* For text buttons */
+    background: #adf;
+    border-color: #fff;
+    box-shadow: 0 0 8px #fff;
+}
+
+/*删除选中button*/
+.LSGlobe-LSGlobeViewshed-deleteButton {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid #444;
+    color: #edffff;
+    border-radius: 5px;
+    padding: 3px 7px;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0 auto;
+    margin-left: 20px;
+}
+
+.LSGlobe-LSGlobeViewshed-deleteButton:focus {
+    outline: none;
+}
+
+.LSGlobe-LSGlobeViewshed-deleteButton:active {
+    color: #000; /* For text buttons */
+    background: #adf;
+    border-color: #fff;
+    box-shadow: 0 0 8px #fff;
+}
+
+.LSGlobe-LSGlobeViewshed-deleteButton:hover{
+    color: #000; /* For text buttons */
+    background: #adf;
+    border-color: #fff;
+    box-shadow: 0 0 8px #fff;
+}
+
+/*可见区域颜色*/
+.LSGlobe-LSGlobeViewshed-buttonVisble{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.LSGlobe-LSGlobeViewshed-buttonVisble input[type=color] {
+    padding: 0px;
+    border: 0px;
+    border-radius: 3px;
+    margin: 0px;
+    margin-left: 23px;
+    width: 35px;
+}
+
+.LSGlobe-LSGlobeViewshed-buttonVisble input[type=color]:enabled{
+    padding: 0px;
+    border: 0px;
+    border-radius: 3px;
+    margin: 0px;
+    margin-left: 23px;
+    width: 35px;
+}
+
+/*不可见区域颜色*/
+.LSGlobe-LSGlobeViewshed-buttonHidden{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.LSGlobe-LSGlobeViewshed-buttonHidden input[type=color] {
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    margin-left: 10px;
+    width: 35px;
+    border-radius: 3px;
+}
+
+/*点位调整div*/
+.LSGlobe-LSGlobeViewshed-position {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.LSGlobe-LSGlobeViewshed-position input[type=number]{
+    text-align: left;
+    background-color: #222;
+    outline: none;
+    color: #edffff;
+    width: 140px;
+    border-radius: 3px;
+    padding: 1px;
+    margin-left: 10px;
+    cursor: auto;
+    border: 1px solid #444;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+
+/*.lsglobe-lsglobeInspector-frustumStatistics {*/
+    /*padding-left:10px;*/
+    /*padding:5px;*/
+    /*background-color: rgba(80, 80, 80, 0.75);*/
+/*}*/
+
+/*.lsglobe-lsglobeInspector-pickSection {*/
+    /*border: 1px solid #aaa;*/
+    /*!*border-radius: 5px;*!*/
+    /*padding: 3px;*/
+    /*margin-bottom: 5px;*/
+/*}*/
+
+/*.lsglobe-lsglobeInspector-tileText {*/
+    /*padding-bottom: 10px;*/
+    /*border-bottom: 1px solid #aaa;*/
+/*}*/
+
+/*.lsglobe-lsglobeInspector-relativeText {*/
+    /*padding-top: 10px;*/
+/*}*/
+
+
+

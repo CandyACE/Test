@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">  <!-- Use Chrome Frame in IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="description" content="Use Viewer to start building new applications or easily embed Cesium into existing applications.">
+    <meta name="cesium-sandcastle-labels" content="Beginner, Showcases">
+    <title>Hello World</title>
+    <script type="text/javascript" src="../Sandcastle-header.js"></script>
+    <script type="text/javascript" src="../../../Build/LSGlobe/LSGlobe.js"></script>
+</head>
+<body class="sandcastle-loading" data-sandcastle-bucket="bucket-requirejs.html">
+<style>
+    @import url(../templates/bucket.css);
+    @import url(../../../Build/LSGlobe/Plugins/EditMarker/EditMarker.css);
+    #toolbar button { display: block; }
+</style>
+<div id="LSGlobeContainer" class="fullSize"></div>
+<div id="loadingOverlay"><h1>Loading...</h1></div>
+<div id="toolbar">
+</div>
+<script id="cesium_sandcastle_script">
+    function startup(LSGlobe) {
+        'use strict';
+//Sandcastle_Begin
+        var viewer = new LSGlobe.Viewer('LSGlobeContainer',{
+            timeline:true
+        });
+        viewer._cesiumWidget.useDefaultRenderLoop=true;
+        var google = new LSGlobe.UrlTemplateImageryProvider({
+            url : 'http://mt0.google.cn/vt/lyrs=s&hl=zh-CN&x={x}&y={y}&z={z}',
+            tilingScheme : new LSGlobe.WebMercatorTilingScheme(),
+            maximumLevel : 20
+        });
+        viewer.imageryLayers.addImageryProvider(google);
+
+
+//Sandcastle_End
+        Sandcastle.finishedLoading();
+    }
+    if (typeof LSGlobe !== "undefined") {
+        startup(LSGlobe);
+    } else if (typeof require === "function") {
+        require(["LSGlobe"], startup);
+    }
+</script>
+</body>
+</html>
